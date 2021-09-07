@@ -27,7 +27,7 @@
 
 
 ## Resources
-
+1. [5 Crucial Concepts for Learning d3.js](https://davidwalsh.name/learning-d3)
 
 ## Contact
 [John Chan](https://github.com/speedracer05)
