@@ -67,13 +67,13 @@ d3.csv("./D3_data_journalism/static/data/data.csv").then(function(censusData) {
 // ==============================
   var toolTip = d3.tip()
     .attr("class", "tooltip")
-    .style("background-color", "#e8e8e8")
+    .style("background-color", "#81D4FA")
     .style("border-radius", "5px")
     .style("padding", "10px")
     .style("color", "black")
     .offset([80, -60])
     .html(function(d) {
-    return (`${d.state}<br>Poverty: ${d.poverty} % <br> Healthcare ${d.healthcare} %`);
+      return (`${d.state}<br>Poverty: ${d.poverty} % <br>No Healthcare: ${d.healthcare} %`);
   });
 
   // Step 7: Create tooltip in the chart
@@ -111,10 +111,6 @@ d3.csv("./D3_data_journalism/static/data/data.csv").then(function(censusData) {
     .text(d => d.abbr);
     console.log(circlesText);
   });
-    
-    // .attr("dx", d => x(d[poverty]))
-    // .attr("dy", d => y(d[healthcare]) + 5)
-    // .classed("stateText", true);
 
 
   var textGroup = chartGroup.selectAll("abbr")
