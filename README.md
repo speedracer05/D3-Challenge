@@ -28,6 +28,7 @@
 
 ## Resources
 1. [5 Crucial Concepts for Learning d3.js](https://davidwalsh.name/learning-d3)
+2. [D3.js -- Bubble Chart with Tooltips Explainatin](https://www.goodmarketing.club/guide/d3-js-bubble-chart-with-tooltips-w-line-by-line-code-explanations/)
 
 ## Contact
 [John Chan](https://github.com/speedracer05)
