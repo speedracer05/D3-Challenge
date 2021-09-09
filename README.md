@@ -1,27 +1,37 @@
-# D3-Challenge
+# Data-driven Research
 
 ## Description
+The following data visualization project, was developed using `Javascript`, `D3.js`, and `HTML`. The scatter plot shows the relationship between poverty and the percentage of those who do not have access to healthcare for each state in the United States. Those states that have the highest poverty rate, also have the the highest percentages of people who lack healthcare. 
+
+The data is based on 2014 ACS 1-year estimates from the [US Census Bureau](https://data.census.gov/cedsci/) and the [Behavioral Risk Factor Surveillance System](https://www.cdc.gov/brfss/index.html).
 
 #### Webpage : [https://speedracer05.github.io/](https://speedracer05.github.io/)
 
 
-# Table of Contents
+## Table of Contents
 -   [Description](#description)
--   [Key Features](#key-features)
--   [Development](#development)
--   [The Output](#the-ouput)
+-   [Technologies](#technologies)
+-   [D3 Visualization](#d3-visualization)
+-   [Deployment](#deployment)
 -   [Resources](#resources)
 -   [Contact](#contact)
 
 ## Key Features
-1. 
+1. Interactive scatter plot 
 2. 
 3. 
 4. 
 5. 
 
-## Development
-
+## Installation and Deployment
+1. Running the visualization can be done via webbrowser using the Windows Command Prompt (CMD) 
+2. Download the D3-Challenge respository from my [Github](https://github.com/speedracer05/D3-Challenge)
+3. Open a command line terminal
+    - From Windows CMD, press the "Windows" key, then type "cmd" (this will open the CMD application)
+    - From Mac, press the "Command" button and the space bar, simultaneously (this will open a search bar on your screen). Open Spotlight. Type "Terminal" and open it. Double click "Terminal" in the left sidebar to open your Mac's Terminal.
+4.  Navigate to the "D3-Challenge" directory that was downloaded
+    - Type "python -m http.server" (don't include the quotes).
+    - In a web browser, type "http://localhost:8000/". A web browser will launch the `app.js` file
 
 ## The Output
 
