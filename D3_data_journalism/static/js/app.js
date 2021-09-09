@@ -1,20 +1,22 @@
   // Set dimensions and margins of svg chart area
 var margin = {top: 20, right: 40, bottom: 100, left: 100},
-  width = 900 - margin.left - margin.right,
-  height = 600 - margin.top - margin.bottom;
+svgWidth = 900 - margin.left - margin.right,
+svgHeight = 600 - margin.top - margin.bottom;
+
+var width = svgWidth - margin.left - margin.right;
+var height = svgHeight - margin.top - margin.bottom;
+
 
   // Create an SVG wrapper; append an svg group to hold the chart and set its margins
   //**Bug-fixed. label was off chart. Changed margin top & bottom from "-"" to "+"**/
-  var svg = d3
-  .select("#scatter")
+  var svg = d3.select("#scatter")
   .append("svg")
-    .attr("width", width + margin.left - margin.right)  
-    .attr("height", height - margin.top + margin.bottom)
-    .append("g") 
-    .attr("transform", `translate(${margin.left}, ${margin.top})`);
-  
+    .attr("width", svgWidth)  
+    .attr("height", svgHeight);
+
 // Append a group area and set margins
-var chartGroup = svg
+var chartGroup = svg.append("g") 
+  .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
   //Read census data
 d3.csv("./D3_data_journalism/static/data/data.csv").then(function(censusData) {
@@ -24,6 +26,7 @@ d3.csv("./D3_data_journalism/static/data/data.csv").then(function(censusData) {
   censusData.forEach(function(data) {
     data.poverty = +data.poverty;
     data.healthcare = +data.healthcare;
+
     // data.income = +data.income;    // Save for future update to dynamic scatter plot 
     // data.obesity = +data.obesity;  // ""
     // data.smokes = +data.smokes;    // ""
@@ -44,10 +47,11 @@ d3.csv("./D3_data_journalism/static/data/data.csv").then(function(censusData) {
 
     // Step 3: Append Axis to chart
     // ==============================
-  var chartGroup = svg.append("g")
+  chartGroup.append("g")
     .attr("transform", `translate(0, ${height})`)
     .call(d3.axisBottom(x));
-  var chartGroup = svg.append("g")
+
+  chartGroup.append("g")
     .call(d3.axisLeft(y));
 
   // Step 4: Create Circles
@@ -60,7 +64,6 @@ d3.csv("./D3_data_journalism/static/data/data.csv").then(function(censusData) {
     .attr("cy", d => y(d.healthcare))
     .attr("r", "15")
     .attr("fill", "#76A9F9")
-    // .classed("stateCircle", true)  // MARK FOR REMOVAL
     .attr("opacity", ".5");
 
 // Step 6: Initialize tool tip
@@ -88,13 +91,6 @@ d3.csv("./D3_data_journalism/static/data/data.csv").then(function(censusData) {
     .on("mouseout", function(data, index) {
       toolTip.hide(data);
     });
-
-  var circlesText = chartGroup.selectAll("abbr")
-    .data(censusData)
-    .enter()
-    .append("text")
-    .text(d => d.abbr);
-    console.log(circlesText);
 
   // Create circle text
   var textGroup = chartGroup.selectAll("abbr")
@@ -126,11 +122,3 @@ d3.csv("./D3_data_journalism/static/data/data.csv").then(function(censusData) {
 }).catch(function(error) {
   console.log(error);
 });
-
-
-
-
-
-
-
-
