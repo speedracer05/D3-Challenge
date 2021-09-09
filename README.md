@@ -28,7 +28,7 @@ The data is based on 2014 ACS 1-year estimates from the [US Census Bureau](https
 
 ## D3 Visualizaton
 A basic plot was created, showing Poverty percentage on the x-axis, and the lack of Healthcare on the y-axis. Both are expressed as a percentage.
-![alt text](https://github.com/speedracer05/D3-Challenge/blob/main/D3_data_journalism/images/poverty_and_healthcare_risks.png width="320")
+<img src="https://github.com/speedracer05/D3-Challenge/blob/main/D3_data_journalism/images/poverty_and_healthcare_risks.png" width="320")
 
 ## Resources
 1. [5 Crucial Concepts for Learning d3.js](https://davidwalsh.name/learning-d3)
