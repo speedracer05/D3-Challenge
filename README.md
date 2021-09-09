@@ -12,7 +12,6 @@ The data is based on 2014 ACS 1-year estimates from the [US Census Bureau](https
 -   [Description](#description)
 -   [Installation and Deployment](#installation-and-deployment)
 -   [D3 Visualization](#d3-visualization)
-
 -   [Resources](#resources)
 -   [Contact](#contact)
 
