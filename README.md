@@ -1,6 +1,9 @@
 # D3-Challenge
 
 ## Description
+The following data visualization project shows the link between poverty and the percentage of those with access to healthcare by state. The data is based on 2014 ACS 1-year estimates from the [US Census Bureau](https://data.census.gov/cedsci/) and the Behavioral Risk Factor Surveillance System.
+
+The visualizations are created in `Javascript` and use `D3.js` code.
 
 #### Webpage : [https://speedracer05.github.io/](https://speedracer05.github.io/)
 
