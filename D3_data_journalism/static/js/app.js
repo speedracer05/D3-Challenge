@@ -110,7 +110,7 @@ d3.csv("./D3_data_journalism/static/data/data.csv").then(function(censusData) {
   .attr("x", 0 - (height / 2))
   .attr("dy", "1em")
   .attr("class", "axisText")
-  .text("Lacks Healthcare (%)");
+  .text("Lack of Healthcare (%)");
 
   svg.append("text")
     .attr("transform", `translate(${width / 2}, ${height + margin.top + 30})`)
