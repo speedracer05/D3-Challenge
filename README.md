@@ -33,6 +33,8 @@ A basic plot was created, showing Poverty percentage on the x-axis, and the lack
 
 <img align="left" src="https://github.com/speedracer05/D3-Challenge/blob/main/D3_data_journalism/images/poverty_and_healthcare_risks.png">
 
+
+
 A tooltip was developed to get more in-depth information behind each data-point
 
 
