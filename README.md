@@ -1,4 +1,4 @@
-# D3-Challenge
+# Data-driven Research
 
 ## Description
 The following data visualization project, was developed using `Javascript`, `D3.js`, and `HTML`. The scatter plot shows the relationship between poverty and the percentage of those who do not have access to healthcare for each state in the United States. Those states that have the highest poverty rate, also have the the highest percentages of people who lack healthcare. 
