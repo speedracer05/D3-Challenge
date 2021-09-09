@@ -4,11 +4,12 @@ var margin = {top: 20, right: 40, bottom: 85, left: 100},
   height = 600 - margin.top - margin.bottom;
 
   // Create an SVG wrapper; append an svg group to hold the chart and set its margins
-var svg = d3
+  //**Bug-fixed. label was off chart. Changed margin top & bottom from "-"" to "+"**/
+  var svg = d3
   .select("#scatter")
   .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr("width", width + margin.left - margin.right)  
+    .attr("height", height - margin.top + margin.bottom)
     .append("g") 
     .attr("transform", `translate(${margin.left}, ${margin.top})`);
   
@@ -41,7 +42,7 @@ d3.csv("./D3_data_journalism/static/data/data.csv").then(function(censusData) {
       d3.max(censusData, function(d){ return d.healthcare; }) * 1.05])
     .range([height, 0]);
 
-    // Step 3: Create axis functions
+    // Step 3: Append Axis to chart
     // ==============================
   var chartGroup = svg.append("g")
     .attr("transform", `translate(0, ${height})`)
@@ -58,7 +59,7 @@ d3.csv("./D3_data_journalism/static/data/data.csv").then(function(censusData) {
     .attr("cx", d => x(d.poverty))
     .attr("cy", d => y(d.healthcare))
     .attr("r", "15")
-    .attr("fill", "#4FC3F7")
+    .attr("fill", "#76A9F9")
     // .classed("stateCircle", true)  // MARK FOR REMOVAL
     .attr("opacity", ".5");
 
@@ -66,13 +67,13 @@ d3.csv("./D3_data_journalism/static/data/data.csv").then(function(censusData) {
 // ==============================
   var toolTip = d3.tip()
     .attr("class", "tooltip")
-    .style("background-color", "#81D4FA")
+    .style("background-color", "#F9C676")
     .style("border-radius", "5px")
-    .style("padding", "10px")
+    .style("padding", "2px")
     .style("color", "black")
     .offset([80, -60])
     .html(function(d) {
-      return (`${d.state}<br>Poverty: ${d.poverty} % <br>No Healthcare: ${d.healthcare} %`);
+      return (`${d.state}<br>Poverty: ${d.poverty} % <br> Healthcare: ${d.healthcare} %`);
   });
 
   // Step 7: Create tooltip in the chart
