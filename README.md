@@ -8,7 +8,7 @@ The data is based on 2014 ACS 1-year estimates from the [US Census Bureau](https
 #### Webpage : [https://speedracer05.github.io/](https://speedracer05.github.io/)
 
 
-# Table of Contents
+## Table of Contents
 -   [Description](#description)
 -   [Technologies](#technologies)
 -   [D3 Visualization](#d3-visualization)
@@ -23,8 +23,15 @@ The data is based on 2014 ACS 1-year estimates from the [US Census Bureau](https
 4. 
 5. 
 
-## Development
-
+## Installation and Deployment
+1. Running the visualization can be done via webbrowser using the Windows Command Prompt (CMD) 
+2. Download the D3-Challenge respository from my [Github](https://github.com/speedracer05/D3-Challenge)
+3. Open a command line terminal
+    - From Windows CMD, press the "Windows" key, then type "cmd" (this will open the CMD application)
+    - From Mac, press the "Command" button and the space bar, simultaneously (this will open a search bar on your screen). Open Spotlight. Type "Terminal" and open it. Double click "Terminal" in the left sidebar to open your Mac's Terminal.
+4.  Navigate to the "D3-Challenge" directory that was downloaded
+    - Type "python -m http.server" (don't include the quotes).
+    - In a web browser, type "http://localhost:8000/". A web browser will launch the `app.js` file
 
 ## The Output
 
