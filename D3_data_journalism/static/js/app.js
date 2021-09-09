@@ -1,14 +1,12 @@
-  // Set dimensions and margins of svg chart area
-var margin = {top: 20, right: 40, bottom: 100, left: 100},
+// Set dimensions and margins of svg chart area
+var margin = {top: 20, right: 40, bottom: 100, left: 45},
 svgWidth = 900 - margin.left - margin.right,
 svgHeight = 600 - margin.top - margin.bottom;
 
 var width = svgWidth - margin.left - margin.right;
 var height = svgHeight - margin.top - margin.bottom;
 
-
   // Create an SVG wrapper; append an svg group to hold the chart and set its margins
-  //**Bug-fixed. label was off chart. Changed margin top & bottom from "-"" to "+"**/
   var svg = d3.select("#scatter")
   .append("svg")
     .attr("width", svgWidth)  
@@ -18,15 +16,14 @@ var height = svgHeight - margin.top - margin.bottom;
 var chartGroup = svg.append("g") 
   .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
-  //Read census data
+//Read census data
 d3.csv("./D3_data_journalism/static/data/data.csv").then(function(censusData) {
 
-    // Step 1: Parse Data/Cast as numbers
-    // ==============================
+// Step 1: Parse Data/Cast as numbers
+// ==============================
   censusData.forEach(function(data) {
     data.poverty = +data.poverty;
     data.healthcare = +data.healthcare;
-
     // data.income = +data.income;    // Save for future update to dynamic scatter plot 
     // data.obesity = +data.obesity;  // ""
     // data.smokes = +data.smokes;    // ""
@@ -45,7 +42,7 @@ d3.csv("./D3_data_journalism/static/data/data.csv").then(function(censusData) {
       d3.max(censusData, function(d){ return d.healthcare; }) * 1.05])
     .range([height, 0]);
 
-    // Step 3: Append Axis to chart
+    // Step 3: Create and append Axes to chart
     // ==============================
   chartGroup.append("g")
     .attr("transform", `translate(0, ${height})`)
@@ -66,7 +63,7 @@ d3.csv("./D3_data_journalism/static/data/data.csv").then(function(censusData) {
     .attr("fill", "#76A9F9")
     .attr("opacity", ".5");
 
-// Step 6: Initialize tool tip
+// Step 5: Initialize tool tip
 // ==============================
   var toolTip = d3.tip()
     .attr("class", "tooltip")
@@ -79,10 +76,12 @@ d3.csv("./D3_data_journalism/static/data/data.csv").then(function(censusData) {
       return (`${d.state}<br>Poverty: ${d.poverty} % <br> Healthcare: ${d.healthcare} %`);
   });
 
-  // Step 7: Create tooltip in the chart
+  // Step 6: Create tooltip in the chart
+  //==============================
   chartGroup.call(toolTip);
 
-  // Step 8: Create event listeners to display and hide the tooltip
+  // Step 7: Create event listeners to display and hide the tooltip
+  //==============================
   circlesGroup.on("click", function(data) {
     toolTip.show(data, this);
   })
@@ -118,7 +117,6 @@ d3.csv("./D3_data_journalism/static/data/data.csv").then(function(censusData) {
     .attr("class", "axisText")
     .text("Poverty (%)");
   
-
 }).catch(function(error) {
   console.log(error);
 });
