@@ -5,9 +5,6 @@ The following data visualization project, was developed using `Javascript`, `D3.
 
 The data is based on 2014 ACS 1-year estimates from the [US Census Bureau](https://data.census.gov/cedsci/) and the [Behavioral Risk Factor Surveillance System](https://www.cdc.gov/brfss/index.html).
 
-#### Webpage : [https://speedracer05.github.io/](https://speedracer05.github.io/)
-
-
 ## Table of Contents
 -   [Description](#description)
 -   [Installation and Deployment](#installation-and-deployment)
