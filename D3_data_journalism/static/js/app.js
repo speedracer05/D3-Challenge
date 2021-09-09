@@ -1,5 +1,5 @@
   // Set dimensions and margins of svg chart area
-var margin = {top: 20, right: 40, bottom: 85, left: 100},
+var margin = {top: 20, right: 40, bottom: 100, left: 100},
   width = 900 - margin.left - margin.right,
   height = 600 - margin.top - margin.bottom;
 
@@ -108,20 +108,21 @@ d3.csv("./D3_data_journalism/static/data/data.csv").then(function(censusData) {
   .attr("dominate-baseline", "middle")
   .attr("text-anchor", "middle");
 
-    // Create axes labels
-    chartGroup.append("text")
-    .attr("transform", "rotate(-90)")
-    .attr("y", 0 - margin.left + 40)
-    .attr("x", 0 - (height / 2))
-    .attr("dy", "1em")
-    .attr("class", "axisText")
-    .text("Lacks Healthcare (%)");
+  // Create axes labels
+  svg.append("text")
+  .attr("transform", "rotate(-90)")
+  .attr("y", 0 - margin.left + 40)
+  .attr("x", 0 - (height / 2))
+  .attr("dy", "1em")
+  .attr("class", "axisText")
+  .text("Lacks Healthcare (%)");
 
-  chartGroup.append("text")
+  svg.append("text")
     .attr("transform", `translate(${width / 2}, ${height + margin.top + 30})`)
     .attr("class", "axisText")
     .text("Poverty (%)");
   
+
 }).catch(function(error) {
   console.log(error);
 });
